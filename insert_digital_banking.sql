@@ -1,1 +1,15 @@
-INSERT INTO account()
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (1, 5950447, '1/14/2026', 1, 1, 1);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (2, 9593365, '5/30/2025', 2, 2, 2);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (3, 4579501, '5/18/2025', 3, 3, 3);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (4, 9069108, '6/23/2025', 4, 4, 4);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (5, 4986310, '11/9/2025', 5, 5, 5);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (6, 7696275, '5/22/2025', 6, 6, 6);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (7, 6271709, '1/16/2026', 7, 7, 7);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (8, 1071093, '5/14/2025', 8, 8, 8);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (9, 6354004, '11/15/2025', 9, 9, 9);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (10, 8103905, '3/6/2025', 10, 10, 10);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (11, 4466332, '1/26/2026', 11, 11, 11);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (12, 9152601, '9/27/2025', 12, 12, 12);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (13, 9734962, '8/8/2025', 13, 13, 13);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (14, 6269428, '1/24/2026', 14, 14, 14);
+INSERT INTO transactions (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id) VALUES (15, 5720105, '8/19/2025', 15, 15, 15);
