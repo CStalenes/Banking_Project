@@ -64,3 +64,4 @@ INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values
 INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (13, 'delete', 13, 'customers','dan@gmail.com', ' ', 'email', '3/10/2025', 13);
 INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (14, 'update', 14, 'customers','50', '51', 'birthdate', '8/27/2025', 14);
 INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (15, 'update', 15, 'customers','50', '51', 'birthdate', '4/10/2025', 15);
+
