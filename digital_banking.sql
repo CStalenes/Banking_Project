@@ -128,3 +128,19 @@ CREATE TABLE fraud(
    transaction_id INT NOT NULL,
    FOREIGN KEY(transaction_id) REFERENCES transactions(id)
 );
+
+
+-- Index 1: account(customer_id, status_account)
+-- Why: queries like "active accounts for a client" (JOIN account ON customer_id, WHERE status_account = 'active').
+-- Without index: full table scan on account. With index: direct access to relevant rows.
+CREATE INDEX idx_account_customer_status ON account(customer_id, status_account);
+
+-- Index 2: transactions(source_account_id, date_transac)
+-- Why: Used for queries listing transactions by account and by period (such as history, reports, top clients).
+-- Joins and filters by date (e.g., last 30 days) are significantly faster with this index.
+CREATE INDEX idx_transactions_source_date ON transactions(source_account_id, date_transac);
+
+-- Index 3: audit_logs(customer_id, action_date)
+-- Why: Used for querying audit logs by customer and date (compliance, support).
+-- Prevents full table scans on audit_logs, which can grow quickly.
+CREATE INDEX idx_audit_customer_date ON audit_logs(customer_id, action_date);
