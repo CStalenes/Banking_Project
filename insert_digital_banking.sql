@@ -49,18 +49,18 @@ INSERT INTO transfer (id, transaction_id, beneficiary_id, account_id, reference,
 INSERT INTO transfer (id, transaction_id, beneficiary_id, account_id, reference, reason, creation_date, execution_date, fees) VALUES (15, 15, 15, 15, '042637994-2', 'Aenean lectus. Pellentesque eget nunc leo.', '3/4/2025', '7/22/2025', '$4.69');
 
 --- TABLE AUDIT LOGS ---
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (1, 'add', 1, null,'500', '530', null, '7/1/2025', 1);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (2, 'add', 2, null,'500', '530', null, '10/10/2025', 2);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (3, 'add', 3, null,'500', '530', null, '6/16/2025', 3);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (4, 'update', 4, null,'50', '51', null, '1/18/2026', 4);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (5, 'delete', 5, null,'500', '0', null, '4/9/2025', 5);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (6, 'add', 6, null,'500', '530', null, '10/27/2025', 6);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (7, 'update', 7, null,'50', '51', null, '10/3/2025', 7);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (8, 'add', 8, null, '500', '530',null, '10/12/2025', 8);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (9, 'update', 9, null,'50', '51', null, '1/4/2026', 9);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (10, 'update', 10, null,'50', '51', null, '9/23/2025', 10);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (11, 'add', 11, null,'500', '530', null, '3/12/2025', 11);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (12, 'update', 12, null,'50', '51', null, '10/5/2025', 12);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (13, 'delete', 13, null,'500', '0', null, '3/10/2025', 13);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (14, 'update', 14, null,'50', '51', null, '8/27/2025', 14);
-INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (15, 'update', 15, null,'50', '51', null, '4/10/2025', 15);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (1, 'add', 1, 'account','500', '530', 'balance', '7/1/2025', 1);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (2, 'add', 2, 'account','500', '530', 'balance', '10/10/2025', 2);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (3, 'add', 3, 'account','500', '530', 'balance', '6/16/2025', 3);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (4, 'update', 4, 'customers','50', '51', 'birthdate', '1/18/2026', 4);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (5, 'delete', 5, 'customers','eric@gmail.com', ' ', 'email', '4/9/2025', 5);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (6, 'add', 6, 'account','500', '530', 'balance', '10/27/2025', 6);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (7, 'update', 7, 'customers','50', '51', 'birthdate', '10/3/2025', 7);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (8, 'add', 8, 'account', '500', '530','balance', '10/12/2025', 8);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (9, 'update', 9, 'customers','50', '51', 'birthdate', '1/4/2026', 9);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (10, 'update', 10, 'customers','50', '51', 'birthdate', '9/23/2025', 10);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (11, 'add', 11, 'account','500', '530', 'balance', '3/12/2025', 11);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (12, 'update', 12, 'customer','50', '51', 'birthdate', '10/5/2025', 12);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (13, 'delete', 13, 'customers','dan@gmail.com', ' ', 'email', '3/10/2025', 13);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (14, 'update', 14, 'customers','50', '51', 'birthdate', '8/27/2025', 14);
+INSERT INTO audit_logs (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id) VALUES (15, 'update', 15, 'customers','50', '51', 'birthdate', '4/10/2025', 15);
