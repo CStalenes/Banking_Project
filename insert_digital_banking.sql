@@ -1,6 +1,6 @@
 
 --- TABLE CUSTOMERS ---
-INSERT INTO customers (lastname, firstname, email, phone_number, birthname, registration_date, status_customers) 
+INSERT INTO customers (lastname, firstname, email, phone_number, birthdate, registration_date, status_customers) 
 VALUES ('Toe', 'Jamesy', 'jtoe0@latimes.com', '0158278320', '1979-04-13', '2024-07-03', 'inactive'),
  ('Parmby', 'Lenka', 'lparmby1@sina.com.cn', '0423720663', '2019-12-01', '2024-12-17', 'active'),
  ('Vawton', 'Isidora', 'ivawton2@telegraph.co.uk', '0428075940', '1963-03-21', '2023-01-31', 'active'),
@@ -171,7 +171,6 @@ VALUES
 (13, 'INSERT', 13, 'payment_card', 'FAILED', 'SUCCESS', 'three_ds_status', '2025-01-17 11:55:00', 13),
 (14, 'DELETE', 14, 'payment_card', 'FAILED', NULL, 'three_ds_status', '2025-01-18 14:20:00', 14),
 (15, 'INSERT', 15, 'transactions', '5555.00', '9999.99', 'amount', '2025-01-19 18:10:00', 15);
-
 
 --- FRAUD ---
 INSERT INTO fraud (id, status_fraud, detection_date, risk_level, transaction_id) VALUES
