@@ -1,6 +1,8 @@
-DROP DATABASE IF EXISTS digital_banking;
+DROP DATABASE digital_banking;
 CREATE DATABASE digital_banking;
 USE digital_banking;
+
+
 
 -- TABLE CLIENTS
 CREATE TABLE customers(
@@ -19,7 +21,7 @@ CREATE TABLE account(
    id INT AUTO_INCREMENT PRIMARY KEY,
    account_number VARCHAR(34) UNIQUE NOT NULL,
    customer_id INT NOT NULL,
-   iban VARCHAR(34) UNIQUE NOT NULL,
+   iban VARCHAR(50) UNIQUE NOT NULL,
    type_account ENUM('Current','Savings','Joint','Business') NOT NULL,
    balance DECIMAL(15,2) DEFAULT 0 NOT NULL,
    currency VARCHAR(10) NOT NULL,
@@ -42,7 +44,7 @@ CREATE TABLE beneficiary(
    id INT AUTO_INCREMENT PRIMARY KEY,
    customer_id INT NOT NULL,
    name_beneficiary VARCHAR(100) NOT NULL,
-   iban VARCHAR(34) NOT NULL,
+   iban VARCHAR(50) NOT NULL,
    bank_name VARCHAR(100) NOT NULL,
    added_at DATETIME NOT NULL,
    FOREIGN KEY(customer_id) REFERENCES customers(id)
@@ -126,4 +128,3 @@ CREATE TABLE fraud(
    transaction_id INT NOT NULL,
    FOREIGN KEY(transaction_id) REFERENCES transactions(id)
 );
-
