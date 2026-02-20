@@ -171,3 +171,22 @@ VALUES
 (13, 'INSERT', 13, 'payment_card', 'FAILED', 'SUCCESS', 'three_ds_status', '2025-01-17 11:55:00', 13),
 (14, 'DELETE', 14, 'payment_card', 'FAILED', NULL, 'three_ds_status', '2025-01-18 14:20:00', 14),
 (15, 'INSERT', 15, 'transactions', '5555.00', '9999.99', 'amount', '2025-01-19 18:10:00', 15);
+
+
+--- FRAUD ---
+INSERT INTO fraud (id, status_fraud, detection_date, risk_level, transaction_id) VALUES
+(1, 'fraudulent sms', '2025-10-15', 2, 1),
+(2, 'fraudulent sms', '2025-12-10', 2, 2),
+(3, 'deepfake', '2026-01-06', 5, 3),
+(4, 'phishing', '2025-03-09', 4, 4),
+(5, 'phishing', '2026-01-30', 4, 5),
+(6, 'phishing', '2025-11-04', 4, 6),
+(7, 'fraudulent sms', '2025-04-17', 2, 7),
+(8, 'deepfake', '2025-12-04', 5, 8),
+(9, 'deepfake', '2025-05-06', 5, 9),
+(10, 'fraudulent sms', '2025-04-12', 2, 10),
+(11, 'fraudulent sms', '2025-03-06', 2, 11),
+(12, 'fraudulent sms', '2025-02-27', 2, 12),
+(13, 'fraudulent sms', '2025-07-12', 2, 13),
+(14, 'phishing', '2025-07-25', 4, 14),
+(15, 'fraudulent sms', '2025-04-23', 2, 15);
