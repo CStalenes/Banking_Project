@@ -110,13 +110,50 @@ SELECT
 FROM avg_balance_by_customer
 ORDER BY avg_balance_acc DESC;
 
+/*Q3*/
+
+WITH transaction_stats AS (
+    SELECT 
+        id,
+        amount,
+        AVG(amount) OVER () AS moy_globale
+    FROM transactions
+)
+
+SELECT 
+    id,
+    amount,
+    moy_globale,
+    ROUND(amount - moy_globale, 2) AS difference
+FROM transaction_stats
+WHERE amount > moy_globale
+ORDER BY amount DESC;
 
 -- OPTIMISATION QUERY --
 
-/*Q1*/
+--INDEXES--
+CREATE INDEX idx_account_customer ON account(customer_id);
+JOIN account a ON c.id = a.customer_id
 
-/*Q1*/
+CREATE INDEX idx_transactions_source ON transactions(source_account_id);
+JOIN account a ON c.id = a.customer_id
 
-/*Q1*/
+CREATE INDEX idx_account_customer_status ON account(customer_id, status_account);
+WHERE a.status_account = 'active'
 
-/*Q1*/
+EXPLAIN ANALYZE
+SELECT *
+FROM transactions
+WHERE source_account_id = 1;
+
+
+SET profiling = 1;
+
+SELECT *
+FROM transactions
+WHERE source_account_id = 1;
+
+SHOW PROFILES;
+
+-- TRANSACTION AND PERFORMANCE --
+
