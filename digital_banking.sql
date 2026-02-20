@@ -112,7 +112,7 @@ CREATE TABLE fraud(
    id INT AUTO_INCREMENT PRIMARY KEY,
    status_fraud VARCHAR(50) NOT NULL,
    detection_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-   risk_level VARCHAR(50),
+   risk_level INT NOT NULL,
    transaction_id INT NOT NULL,
    FOREIGN KEY(transaction_id) REFERENCES transactions(id)
 );
