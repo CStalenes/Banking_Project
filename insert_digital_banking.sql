@@ -1,3 +1,4 @@
+
 --- TABLE TRANSACTIONS ---
 INSERT INTO transactions
 (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id)
@@ -43,39 +44,39 @@ VALUES
 INSERT INTO transfer
 (id, transaction_id, beneficiary_id, account_id, reference, reason, creation_date, execution_date, fees)
 VALUES
-(1, 1, 1, 1, 'REF001', 'Loyer janvier', '2025-01-04 09:00:00', '2025-01-05', 1.50),
-(2, 2, 2, 2, 'REF002', 'Facture eau', '2025-01-05 10:00:00', '2025-01-06', 0.80),
-(3, 3, 3, 3, 'REF003', 'Facture électricité', '2025-01-06 08:00:00', '2025-01-07', 0.90),
+(1, 1, 1, 1, 'REF001', 'January bill', '2025-01-04 09:00:00', '2025-01-05', 1.50),
+(2, 2, 2, 2, 'REF002', 'Water bill', '2025-01-05 10:00:00', '2025-01-06', 0.80),
+(3, 3, 3, 3, 'REF003', 'Electricity bill', '2025-01-06 08:00:00', '2025-01-07', 0.90),
 (4, 4, 4, 4, 'REF004', 'Internet', '2025-01-07 12:00:00', '2025-01-08', 0.75),
-(5, 5, 5, 5, 'REF005', 'Salaire', '2025-01-08 15:00:00', '2025-01-09', 0.00),
-(6, 6, 6, 6, 'REF006', 'Remboursement', '2025-01-09 11:00:00', '2025-01-10', 1.20),
-(7, 7, 7, 7, 'REF007', 'Assurance', '2025-01-10 09:30:00', '2025-01-11', 0.60),
-(8, 8, 8, 8, 'REF008', 'Abonnement', '2025-01-11 13:00:00', '2025-01-12', 0.50),
-(9, 9, 9, 9, 'REF009', 'Crédit auto', '2025-01-12 14:00:00', '2025-01-13', 1.80),
-(10, 10, 10, 10, 'REF010', 'Épargne', '2025-01-13 16:00:00', '2025-01-14', 0.40),
-(11, 11, 11, 11, 'REF011', 'Loyer février', '2025-01-14 09:00:00', '2025-01-15', 1.50),
-(12, 12, 12, 12, 'REF012', 'Facture gaz', '2025-01-15 10:00:00', '2025-01-16', 0.85),
-(13, 13, 13, 13, 'REF013', 'Remboursement ami', '2025-01-16 11:00:00', '2025-01-17', 0.00),
-(14, 14, 14, 14, 'REF014', 'Frais scolarité', '2025-01-17 12:00:00', '2025-01-18', 2.00),
-(15, 15, 15, 15, 'REF015', 'Don association', '2025-01-18 13:00:00', '2025-01-19', 0.30);
+(5, 5, 5, 5, 'REF005', 'Pay', '2025-01-08 15:00:00', '2025-01-09', 0.00),
+(6, 6, 6, 6, 'REF006', 'Refund', '2025-01-09 11:00:00', '2025-01-10', 1.20),
+(7, 7, 7, 7, 'REF007', 'Insurance', '2025-01-10 09:30:00', '2025-01-11', 0.60),
+(8, 8, 8, 8, 'REF008', 'Amazon subscription', '2025-01-11 13:00:00', '2025-01-12', 0.50),
+(9, 9, 9, 9, 'REF009', 'Car credit', '2025-01-12 14:00:00', '2025-01-13', 1.80),
+(10, 10, 10, 10, 'REF010', 'Saving', '2025-01-13 16:00:00', '2025-01-14', 0.40),
+(11, 11, 11, 11, 'REF011', 'Febuary bill', '2025-01-14 09:00:00', '2025-01-15', 1.50),
+(12, 12, 12, 12, 'REF012', 'Fuel bill', '2025-01-15 10:00:00', '2025-01-16', 0.85),
+(13, 13, 13, 13, 'REF013', 'Friend refund ', '2025-01-16 11:00:00', '2025-01-17', 0.00),
+(14, 14, 14, 14, 'REF014', 'School fees', '2025-01-17 12:00:00', '2025-01-18', 2.00),
+(15, 15, 15, 15, 'REF015', 'Donation charity', '2025-01-18 13:00:00', '2025-01-19', 0.30);
 
 
 --- TABLE AUDIT_LOGS ---
 INSERT INTO audit_logs
 (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id)
 VALUES
-(1, 'INSERT', 1, 'transactions', NULL, '1500.00', 'amount', '2025-01-05 10:16:00', 1),
-(2, 'INSERT', 2, 'transactions', NULL, '230.50', 'amount', '2025-01-06 11:22:00', 2),
+(1, 'INSERT', 1, 'transactions', '1000', '1500.00', 'amount', '2025-01-05 10:16:00', 1),
+(2, 'INSERT', 2, 'transactions', '30.50', '230.50', 'amount', '2025-01-06 11:22:00', 2),
 (3, 'UPDATE', 3, 'account', '1000', '1100', 'balance', '2025-01-07 09:15:00', 3),
-(4, 'DELETE', 4, 'beneficiary', 'Old Beneficiary', NULL, 'name', '2025-01-08 14:50:00', 4),
-(5, 'INSERT', 5, 'transfer', NULL, 'REF005', 'reference', '2025-01-09 16:10:00', 5),
+(4, 'DELETE', 4, 'beneficiary', 'Ross', NULL, 'name', '2025-01-08 14:50:00', 4),
+(5, 'INSERT', 5, 'transaction', '300.00', '500.00', 'amount', '2025-01-09 16:10:00', 5),
 (6, 'UPDATE', 6, 'transactions', '75.30', '80.30', 'amount', '2025-01-10 12:35:00', 6),
-(7, 'INSERT', 7, 'payment_card', NULL, 'SUCCESS', 'three_ds_status', '2025-01-11 08:45:00', 7),
+(7, 'INSERT', 7, 'payment_card', 'FAILED', 'SUCCESS', 'three_ds_status', '2025-01-11 08:45:00', 7),
 (8, 'UPDATE', 8, 'account', '2000', '1660', 'balance', '2025-01-12 14:00:00', 8),
-(9, 'INSERT', 9, 'transfer', NULL, 'REF009', 'reference', '2025-01-13 15:20:00', 9),
+(9, 'UPDATE', 9, 'account', '3000', '5000', 'balance', '2025-01-13 15:20:00', 9),
 (10, 'UPDATE', 10, 'customers', 'inactive', 'active', 'status', '2025-01-14 17:30:00', 10),
-(11, 'INSERT', 11, 'transactions', NULL, '1300.00', 'amount', '2025-01-15 09:05:00', 11),
+(11, 'INSERT', 11, 'transactions', '1200.00', '1300.00', 'amount', '2025-01-15 09:05:00', 11),
 (12, 'UPDATE', 12, 'account', '1500', '1030', 'balance', '2025-01-16 10:40:00', 12),
-(13, 'INSERT', 13, 'transfer', NULL, 'REF013', 'reference', '2025-01-17 11:55:00', 13),
+(13, 'INSERT', 13, 'payment_card', 'FAILED', 'SUCCESS', 'three_ds_status', '2025-01-17 11:55:00', 13),
 (14, 'DELETE', 14, 'payment_card', 'FAILED', NULL, 'three_ds_status', '2025-01-18 14:20:00', 14),
-(15, 'INSERT', 15, 'transactions', NULL, '9999.99', 'amount', '2025-01-19 18:10:00', 15);
+(15, 'INSERT', 15, 'transactions', '5555.00', '9999.99', 'amount', '2025-01-19 18:10:00', 15);
