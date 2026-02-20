@@ -98,7 +98,10 @@ CREATE TABLE transfer(
 CREATE TABLE audit_logs(
    id INT AUTO_INCREMENT PRIMARY KEY,
    action_logs VARCHAR(50) NOT NULL,
+   customer_id INT NOT NULL,
    relevant_table VARCHAR(50) NOT NULL,
+   old_values VARCHAR5(250) NOT NULL,
+   new_values VARCHAR(250),
    changed_fields JSON,
    action_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
    transaction_id INT,
