@@ -1,5 +1,4 @@
-
---- TABLE CUSTOMERS ---
+-- TABLE CUSTOMERS --
 INSERT INTO customers (lastname, firstname, email, phone_number, birthdate, registration_date, status_customers) 
 VALUES ('Toe', 'Jamesy', 'jtoe0@latimes.com', '0158278320', '1979-04-13', '2024-07-03', 'inactive'),
  ('Parmby', 'Lenka', 'lparmby1@sina.com.cn', '0423720663', '2019-12-01', '2024-12-17', 'active'),
@@ -15,7 +14,7 @@ VALUES ('Toe', 'Jamesy', 'jtoe0@latimes.com', '0158278320', '1979-04-13', '2024-
  ('Gornal', 'Tamera', 'tgornalb@wp.com', '0621310418', '1976-01-18', '2022-05-24', 'inactive'),
  ('Preedy', 'Adele', 'apreedyc@zimbio.com', '0431900141', '2026-07-01', '2023-09-19', 'suspended');
 
---- TABLE ACCOUNT ---
+-- TABLE ACCOUNT --
 INSERT INTO account (account_number, customer_id, iban, type_account, balance, currency, status_account, opening_date) 
 VALUES 
 ('FR6160773145', 1, 'FR32 6725 7497 69AO QCJB EEUB G95', 'Courant', 9667.87, 'USD', 'closed', '2025-02-22'),
@@ -34,7 +33,7 @@ VALUES
 ('FR9481712098', 14, 'DE45 1234 5678 9123 4567 89', 'Epargne', 8745.30, 'USD', 'active', '2026-02-02'),
 ('FR4328875441', 15, 'IT60 X054 2811 1010 0000 0123 456', 'Courant', 4556.20, 'GBP', 'blocked', '2026-02-17');
 
---- TABLE TYPE_TRANSACTION---
+-- TABLE TYPE_TRANSACTION--
 INSERT INTO type_transaction (code, label, description_transac, active) 
 VALUES 
 ('CARD_PAY', 'Card Payment', 'Transfer to external account', false),
@@ -54,7 +53,7 @@ VALUES
 ('WITHDRAWAL', 'Deposit', 'Deposit from ATM', false);
 
 
---- TABLE BENEFICIARY ---
+-- TABLE BENEFICIARY --
 INSERT INTO beneficiary (customer_id, name_beneficiary, iban, bank_name, added_at) 
 VALUES (1, 'Hinze Windham', 'MR21 3854 8722 9072 5214 2895 931', 'HSBC', '2023-10-23'),
 (2, 'Towney Pinchback', 'LT13 7265 5533 7462 4173', 'La Banque Postale', '2025-05-03'),
@@ -72,7 +71,7 @@ VALUES (1, 'Hinze Windham', 'MR21 3854 8722 9072 5214 2895 931', 'HSBC', '2023-1
 (14, 'Jules Lemoine', 'DE12 3456 7890 1234 5678 90', 'Commerzbank', '2025-03-15'),
 (15, 'Fatima Benali', 'ES91 2100 1234 5678 9012 3456', 'Santander', '2023-11-27');
 
---- TABLE BANKING CARD---
+-- TABLE BANKING CARD--
 INSERT INTO banking_card (card_number, account_id, card_type, expiration_date, payment_ceiling, withdrawal_limit, status_card) 
 VALUES (5824555431158696, 1, 'Mastercard', '2030-07-06', 9965.71, 1028.51, 'blocked'),
 (5165020551376869, 2, 'Gold', '2028-04-09', 5346.09, 1614.22, 'blocked'),
@@ -90,7 +89,7 @@ VALUES (5824555431158696, 1, 'Mastercard', '2030-07-06', 9965.71, 1028.51, 'bloc
 (5398212345678901, 14, 'Visa', '2029-09-20', 3500.00, 700.10, 'active'),
 (4288123498765432, 15, 'Mastercard', '2028-12-12', 6200.55, 900.00, 'expired');
 
---- TABLE TRANSACTIONS ---
+-- TABLE TRANSACTIONS --
 INSERT INTO transactions
 (id, amount, date_transac, source_account_id, destination_account_id, type_transaction_id)
 VALUES
@@ -110,7 +109,7 @@ VALUES
 (14, 60.00, '2025-01-18 14:15:00', 14, 15, 4),
 (15, 9999.99, '2025-01-19 18:00:00', 15, 1, 5);
 
---- TABLE PAYMENT_CARD ---
+-- TABLE PAYMENT_CARD --
 INSERT INTO payment_card
 (id, transaction_id, banking_card_id, payment_method, merchant_country, three_ds_status, payment_date)
 VALUES
@@ -131,7 +130,7 @@ VALUES
 (15, 15, 15, 'contactless', 'USA', 'SUCCESS', '2025-01-19 18:05:00');
 
 
---- TABLE TRANSFER ---
+-- TABLE TRANSFER --
 INSERT INTO transfer
 (id, transaction_id, beneficiary_id, account_id, reference, reason, creation_date, execution_date, fees)
 VALUES
@@ -152,27 +151,27 @@ VALUES
 (15, 15, 15, 15, 'REF015', 'Donation charity', '2025-01-18 13:00:00', '2025-01-19', 0.30);
 
 
---- TABLE AUDIT_LOGS ---
+-- TABLE AUDIT_LOGS --
 INSERT INTO audit_logs
 (id, action_logs, customer_id, relevant_table, old_values, new_values, changed_fields, action_date, transaction_id)
 VALUES
-(1, 'INSERT', 1, 'transactions', '1000', '1500.00', 'amount', '2025-01-05 10:16:00', 1),
-(2, 'INSERT', 2, 'transactions', '30.50', '230.50', 'amount', '2025-01-06 11:22:00', 2),
-(3, 'UPDATE', 3, 'account', '1000', '1100', 'balance', '2025-01-07 09:15:00', 3),
-(4, 'DELETE', 4, 'beneficiary', 'Ross', NULL, 'name', '2025-01-08 14:50:00', 4),
-(5, 'INSERT', 5, 'transaction', '300.00', '500.00', 'amount', '2025-01-09 16:10:00', 5),
-(6, 'UPDATE', 6, 'transactions', '75.30', '80.30', 'amount', '2025-01-10 12:35:00', 6),
-(7, 'INSERT', 7, 'payment_card', 'FAILED', 'SUCCESS', 'three_ds_status', '2025-01-11 08:45:00', 7),
-(8, 'UPDATE', 8, 'account', '2000', '1660', 'balance', '2025-01-12 14:00:00', 8),
-(9, 'UPDATE', 9, 'account', '3000', '5000', 'balance', '2025-01-13 15:20:00', 9),
-(10, 'UPDATE', 10, 'customers', 'inactive', 'active', 'status', '2025-01-14 17:30:00', 10),
-(11, 'INSERT', 11, 'transactions', '1200.00', '1300.00', 'amount', '2025-01-15 09:05:00', 11),
-(12, 'UPDATE', 12, 'account', '1500', '1030', 'balance', '2025-01-16 10:40:00', 12),
-(13, 'INSERT', 13, 'payment_card', 'FAILED', 'SUCCESS', 'three_ds_status', '2025-01-17 11:55:00', 13),
-(14, 'DELETE', 14, 'payment_card', 'FAILED', NULL, 'three_ds_status', '2025-01-18 14:20:00', 14),
-(15, 'INSERT', 15, 'transactions', '5555.00', '9999.99', 'amount', '2025-01-19 18:10:00', 15);
+(1, 'INSERT', 1, 'transactions', '1000', '1500.00', '["amount"]', '2025-01-05 10:16:00', 1),
+(2, 'INSERT', 2, 'transactions', '30.50', '230.50', '["amount"]', '2025-01-06 11:22:00', 2),
+(3, 'UPDATE', 3, 'account', '1000', '1100', '["balance"]', '2025-01-07 09:15:00', 3),
+(4, 'DELETE', 4, 'beneficiary', 'Ross', NULL, '["name"]', '2025-01-08 14:50:00', 4),
+(5, 'INSERT', 5, 'transaction', '300.00', '500.00', '["amount"]', '2025-01-09 16:10:00', 5),
+(6, 'UPDATE', 6, 'transactions', '75.30', '80.30', '["amount"]', '2025-01-10 12:35:00', 6),
+(7, 'INSERT', 7, 'payment_card', 'FAILED', 'SUCCESS', '["three_ds_status"]', '2025-01-11 08:45:00', 7),
+(8, 'UPDATE', 8, 'account', '2000', '1660', '["balance"]', '2025-01-12 14:00:00', 8),
+(9, 'UPDATE', 9, 'account', '3000', '5000', '["balance"]', '2025-01-13 15:20:00', 9),
+(10, 'UPDATE', 10, 'customers', 'inactive', 'active', '["status"]', '2025-01-14 17:30:00', 10),
+(11, 'INSERT', 11, 'transactions', '1200.00', '1300.00', '["amount"]', '2025-01-15 09:05:00', 11),
+(12, 'UPDATE', 12, 'account', '1500', '1030', '["balance"]', '2025-01-16 10:40:00', 12),
+(13, 'INSERT', 13, 'payment_card', 'FAILED', 'SUCCESS', '["three_ds_status"]', '2025-01-17 11:55:00', 13),
+(14, 'DELETE', 14, 'payment_card', 'FAILED', NULL, '["three_ds_status"]', '2025-01-18 14:20:00', 14),
+(15, 'INSERT', 15, 'transactions', '5555.00', '9999.99', '["amount"]', '2025-01-19 18:10:00', 15);
 
---- FRAUD ---
+-- FRAUD --
 INSERT INTO fraud (id, status_fraud, detection_date, risk_level, transaction_id) VALUES
 (1, 'fraudulent sms', '2025-10-15', 2, 1),
 (2, 'fraudulent sms', '2025-12-10', 2, 2),
