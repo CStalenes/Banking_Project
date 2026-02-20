@@ -10,7 +10,7 @@ CREATE TABLE customers(
    email VARCHAR(100) NOT NULL UNIQUE,
    phone_number VARCHAR(20) NOT NULL,
    birthdate DATE NOT NULL,
-   registration_date DATE DEFAULT CURRENT_DATE NOT NULL,
+   registration_date DATE DEFAULT (CURRENT_DATE) NOT NULL,
    status_customers ENUM('active', 'inactive', 'suspended') DEFAULT 'active' NOT NULL
 );
 
@@ -24,7 +24,7 @@ CREATE TABLE account(
    balance DECIMAL(15,2) DEFAULT 0 NOT NULL,
    currency VARCHAR(10) NOT NULL,
    status_account ENUM('active','blocked','closed') NOT NULL,
-   opening_date DATE DEFAULT CURRENT_DATE NOT NULL,
+   opening_date DATE DEFAULT (CURRENT_DATE) NOT NULL,
    FOREIGN KEY(customer_id) REFERENCES customers(id)
 );
 
@@ -95,8 +95,8 @@ CREATE TABLE transfer(
    account_id INT NOT NULL,
    reference VARCHAR(50) NOT NULL,
    reason VARCHAR(255),
-   creation_date DATE DEFAULT CURRENT_DATE NOT NULL,
-   execution_date DATE DEFAULT CURRENT_DATE NOT NULL,
+   creation_date DATE DEFAULT (CURRENT_DATE) NOT NULL,
+   execution_date DATE DEFAULT (CURRENT_DATE) NOT NULL,
    fees DECIMAL(15,2) NOT NULL,
    FOREIGN KEY(transaction_id) REFERENCES transactions(id),
    FOREIGN KEY(account_id) REFERENCES account(id),
